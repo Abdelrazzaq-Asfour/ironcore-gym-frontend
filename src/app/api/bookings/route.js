@@ -3,12 +3,12 @@
 // ============================================================================
 
 import { NextResponse } from 'next/server';
-import { MOCK_DATABASE } from '../../../data/mockData';
+import { mockDatabase } from '../../../data/mockData';
 
 export async function GET() {
   try {
     return NextResponse.json(
-      { success: true, data: MOCK_DATABASE.bookings || [] },
+      { success: true, data: mockDatabase.bookings || [] },
       { status: 200 }
     );
   } catch (error) {
