@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- تدرج لوني يعطي طابع القوة والفولاذ -->
+    <linearGradient id="ironGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="darkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- خلفية مربعة ذات زوايا دائرية تتناسب مع واجهة النظام -->
+  <rect width="512" height="512" rx="112" fill="url(#darkBg)" />
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="#1e293b" stroke-width="12" />
+
+  <!-- رمز الدمبل البسيط والحاد (يمثل Core & Iron) -->
+  <g transform="translate(256, 256) rotate(-45)">
+    <!-- المقبض المركزي -->
+    <rect x="-36" y="-140" width="72" height="280" rx="16" fill="url(#ironGrad)" />
+    
+    <!-- الأوزان الجانبية العليا -->
+    <rect x="-84" y="-180" width="168" height="56" rx="14" fill="#f8fafc" />
+    <rect x="-104" y="-230" width="208" height="36" rx="10" fill="#ef4444" />
+
+    <!-- الأوزان الجانبية السفلى -->
+    <rect x="-84" y="124" width="168" height="56" rx="14" fill="#f8fafc" />
+    <rect x="-104" y="194" width="208" height="36" rx="10" fill="#ef4444" />
+  </g>
+
+  <!-- حرف I بارز في المنتصف يرمز لاسم IronCore -->
+  <text x="256" y="284" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="190" fill="#020617" text-anchor="middle">I</text>
+</svg>
