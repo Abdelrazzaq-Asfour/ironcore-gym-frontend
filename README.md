@@ -112,9 +112,7 @@ To test the application instantly using mock data (`USE_MOCK_DATA = true`), use 
 
 ---
 
-## 🛡️ License
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ```
 
