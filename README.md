@@ -1,12 +1,6 @@
 ```markdown
 # IronCore Gym | Enterprise Management Platform
 
-[![Next.js](https://img.shields.io/badge/Frontend-Next.js_16-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Spring Boot](https://img.shields.io/badge/Backend-Spring_Boot_3.x-brightgreen?style=for-the-badge&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
-[![MySQL](https://img.shields.io/badge/Database-MySQL_8.0-orange?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
 An enterprise-grade, zero-trust full-stack management platform engineered for serious bodybuilding and raw strength training facilities. Features a robust Spring Boot 3.x backend architecture, a high-performance Next.js 16 App Router frontend, role-based access control (RBAC), and dynamic mock/real API toggling.
 
 ---
