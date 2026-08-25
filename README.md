@@ -1,8 +1,10 @@
+# IronCore Gym | Enterprise Management Platform
+
+
 <img width="1912" height="952" alt="ironcoregym-mohammed (1)" src="https://github.com/user-attachments/assets/99fb16a0-1281-4117-8ac7-78c73e36177a" />
 
 
 ```markdown
-# IronCore Gym | Enterprise Management Platform
 
 An enterprise-grade, zero-trust full-stack management platform engineered for serious bodybuilding and raw strength training facilities. Features a robust Spring Boot 3.x backend architecture, a high-performance Next.js 16 App Router frontend, role-based access control (RBAC), and dynamic mock/real API toggling.
 
