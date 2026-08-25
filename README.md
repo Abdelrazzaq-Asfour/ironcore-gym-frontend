@@ -1,3 +1,6 @@
+<img width="1912" height="952" alt="ironcoregym-mohammed (1)" src="https://github.com/user-attachments/assets/99fb16a0-1281-4117-8ac7-78c73e36177a" />
+
+
 ```markdown
 # IronCore Gym | Enterprise Management Platform
 
@@ -114,6 +117,3 @@ To test the application instantly using mock data (`USE_MOCK_DATA = true`), use 
 
 
 
-```
-
-```
