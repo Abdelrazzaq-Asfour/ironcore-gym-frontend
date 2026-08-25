@@ -1,16 +1,15 @@
 // ============================================================================
-// API Route: Secure Proxy Login Endpoint (src/app/api/auth/login/route.js)
+// API Route: Secure Proxy / Mock Login Endpoint (src/app/api/auth/login/route.js)
 // ============================================================================
 
 import { NextResponse } from 'next/server';
+import { mockDatabase } from '../../../../data/mockData';
 
 export async function POST(request) {
   try {
-    // Parse incoming client payload with strict input boundary check
     const body = await request.json();
     const { identifier, password } = body;
 
-    // Validate request integrity
     if (!identifier || !password) {
       return NextResponse.json(
         { success: false, message: 'Identifier and password are required.' },
@@ -18,37 +17,34 @@ export async function POST(request) {
       );
     }
 
-    // Forward authentication request securely to the production Spring Boot backend
-    const backendResponse = await fetch('http://localhost:8080/api/v1/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ identifier, password }),
-    });
+    // البحث عن المستخدم في قاعدة البيانات الوهمية
+    const user = mockDatabase.users.find(
+      (u) => u.username === identifier || u.email === identifier
+    );
 
-    const result = await backendResponse.json();
-
-    if (!backendResponse.ok) {
-      // Propagate exact failure message from backend zero-trust barrier
+    if (!user || password !== '123456') {
       return NextResponse.json(
-        { success: false, message: result.message || 'Authentication failed.' },
-        { status: backendResponse.status }
+        { success: false, message: 'Invalid credentials (Mock)' },
+        { status: 401 }
       );
     }
 
-    // Return structured success response back to the client session handler
+    const primaryRole = user.roles?.[0]?.name || 'ROLE_USER';
+
     return NextResponse.json(
       {
         success: true,
         message: 'Authentication successful',
-        ...result, // Passes backend response payload directly (id, username, email, role, etc.)
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        role: primaryRole,
+        token: 'mock-jwt-token-xyz-123',
       },
       { status: 200 }
     );
 
   } catch (error) {
-    // Log unexpected failures internally and return generalized secure message
     console.error('[API Auth Proxy Error]:', error.message);
     return NextResponse.json(
       { success: false, message: 'Internal Server Error. Please try again later.' },
